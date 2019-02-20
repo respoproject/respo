@@ -1,6 +1,6 @@
 # respo
 ## teams suggestion
- - Math (analytics) [?]
+ - Math (analytics) [?...]
  - Backend (DB -> analytics) [Maj, ?]
  - Frontend (analytics -> Frontend) [?]
 
@@ -8,4 +8,3 @@
  - 3 modules: Frontend, Analytics, Backend
  - communication: FE <-> ANA <-> BE
  - analytics skipped for raw data display and data entry
- 
