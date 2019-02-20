@@ -1,8 +1,8 @@
 # respo
 ## teams suggestion
- - Math (analytics) [?...]
- - Backend (DB -> analytics) [Maj, ?]
- - Frontend (analytics -> Frontend) [?]
+ - Math (analytics) [Aljaž, Gašper, Matej]
+ - Backend (DB -> analytics) [Maj, Matevž]
+ - Frontend (analytics -> Frontend) [Adem, Ivan]
 
 ## architecture suggestion
  - 3 modules: Frontend, Analytics, Backend
