@@ -8,3 +8,6 @@
  - 3 modules: Frontend, Analytics, Backend
  - communication: FE <-> ANA <-> BE
  - analytics skipped for raw data display and data entry
+
+## Week 4.3.2019 -> 8.3.2019
+- Backend (Database structure model) [Maj, Matevž]
