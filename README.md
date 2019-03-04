@@ -1,6 +1,6 @@
 # respo
 ## teams suggestion
- - Math (analytics) [Aljaž, Gašper, Matej]
+ - Math (analytics) [Aljaž, Matej]
  - Backend (DB -> analytics) [Maj, Matevž]
  - Frontend (analytics -> Frontend) [Adem, Ivan]
 
@@ -14,3 +14,4 @@
 
 ## Week 4.3.2019 -> 8.3.2019
 - Backend (Database structure model) [Maj, Matevž]
+- Reading excel data tables with python and basic data analysis [Aljaž, Matej]
