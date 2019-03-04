@@ -9,5 +9,8 @@
  - communication: FE <-> ANA <-> BE
  - analytics skipped for raw data display and data entry
 
+## Directory structure
+ - `data`: everything regarding data modelling for now
+
 ## Week 4.3.2019 -> 8.3.2019
 - Backend (Database structure model) [Maj, Matevž]
