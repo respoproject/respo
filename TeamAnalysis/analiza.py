@@ -15,7 +15,9 @@ def enablePrint(a):
     sys.stdout = a
 
 
-def list_out(list): return ", ".join(map(str, list))
+def list_out(list): 
+    " Prints list's elements with commas. "
+    return ", ".join(map(str, list))
 
 
 def maximal_absolute_lack(job_column_index, ocene, potrebno, view):
@@ -180,12 +182,14 @@ def most_important_competence_that_lack(job_column_index, ocene, potrebno, view)
                 else:
                     return ("required: " + list_out(p),"current mark: " + list_out(o), "absolute lack: " + str(maximal_lack), "improve row: " + list_out(rows))
 
-## TA DELA!!! POPRAVI ŠE ABSOLUTE LACK, RELATIVE LACK, MOST IMPORTANCE COMPETENCE THAT LACK
+
 def improve_comp_by_formula(job_column_index, ocene, potrebno, table_of_importance_loc, view):
     formula_lack = 0
     p = []
     o = []
     rows = []
+    if table_of_importance_loc == None:
+        table_of_importance_loc = potrebno
     for i in range(len(ocene[:,job_column_index])):
         a = ocene[i, job_column_index]
         b = potrebno[i, job_column_index]
@@ -241,7 +245,7 @@ def improve_comp_by_formula(job_column_index, ocene, potrebno, table_of_importan
     return ("required: " + list_out(p), "current mark: " + list_out(o), "lack by formula: " + str(formula_lack), "improve row: " + list_out(rows))
 
 
-def importance_over_number(job_column_index, ocene_file, potrebno_file, view, num=70, model=maximal_absolute_lack):
+def importance_over_number(job_column_index, ocene_file, potrebno_file, table_of_importance, view, num=70, model=maximal_absolute_lack):
     if 0 > num or num > 100:
         print("Number should be between 0 and 100.")
 
@@ -275,10 +279,16 @@ def importance_over_number(job_column_index, ocene_file, potrebno_file, view, nu
 
     for i in range(len(ocene[:,0])):
         printing = blockPrint()
-        if (potrebno[i, 0] >= num) and (model(0, ocene, potrebno, view) != "All competences satisfy the requirements."):
-            enablePrint(printing)
-            print("Over {} needs to be improved:".format(str(num)))
-            return model(0, ocene, potrebno, view)
+        if model == improve_comp_by_formula:
+            if (potrebno[i, 0] >= num) and (model(0, ocene, potrebno, table_of_importance, view) != "All competences satisfy the requirements."):
+                enablePrint(printing)
+                print("Over {} needs to be improved:".format(str(num)))
+                return model(0, ocene, potrebno, table_of_importance, view)
+        else:
+            if (potrebno[i, 0] >= num) and (model(0, ocene, potrebno, view) != "All competences satisfy the requirements."):
+                enablePrint(printing)
+                print("Over {} needs to be improved:".format(str(num)))
+                return model(0, ocene, potrebno, view)
         enablePrint(printing)
 
     potrebno = new_potrebno2.iloc
@@ -287,13 +297,3 @@ def importance_over_number(job_column_index, ocene_file, potrebno_file, view, nu
     print("Under {} needs to be improved:".format(str(num)))
     return model(0, ocene, potrebno, view)
 
-
-# for i in range(36):
-#     print(importance_over_number(i, model=maximal_absolute_lack))
-#     print("\n")
-#     print(importance_over_number(i, model=maximal_relative_lack))
-#     print("\n")
-#     print(importance_over_number(i, model=most_important_competence_that_lack))
-#     print("\n")
-#     print(importance_over_number(i, model=improve_comp_by_formula))
-#     print("\n\n\n\n")

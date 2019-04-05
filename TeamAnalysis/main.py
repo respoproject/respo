@@ -12,7 +12,7 @@ def improve_competence(current_marks_excel_table, required_marks_of_competence_e
     ocene = marks.iloc
     potrebno = komp.iloc
     if model == importance_over_number:
-        return importance_over_number(job_column_index, current_marks_excel_table, required_marks_of_competence_excel_table, view, num=number, model=model2)
+        return importance_over_number(job_column_index, current_marks_excel_table, required_marks_of_competence_excel_table, table_of_importance, view, num=number, model=model2)
     elif model == improve_comp_by_formula:
         return improve_comp_by_formula(job_column_index, ocene, potrebno, table_of_importance1, view)
     else:
