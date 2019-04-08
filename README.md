@@ -12,6 +12,7 @@
 ## Directory structure
  - `data`: everything regarding data modelling for now
  - `admin`: notes from meetings etc. Please upload your notes and name them similarly.
+ - moqups: everything regarding the views, functions and requirements of the web app. 
 
 ## Week 4.3.2019 -> 8.3.2019
 - Backend (Database structure model) [Maj, Matevž]
