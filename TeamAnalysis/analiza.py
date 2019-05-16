@@ -1,26 +1,35 @@
+#importing pandas for data analysis as well as using to read excel files
 import pandas as pd
+#importing random package for generating random data
 import random as r
+#importing numpy package for data computing
 import numpy as np
-
+#sys and os is used to write in terminal outputs
 import sys, os
 
-##
-# Disable
+# Blocks for printing a function in the user interface
 def blockPrint():
     old_stdout = sys.stdout
     sys.stdout = open(os.devnull, 'w')
     return old_stdout
 
-# Restore
+# Enables printing a function in the user interface
 def enablePrint(a):
     sys.stdout = a
 
-
+# Prints list's elements with commas.
 def list_out(list): 
-    " Prints list's elements with commas. "
-    return ", ".join(map(str, list))
+     return ", ".join(map(str, list))
 
 
+''' This is the first model to find comptences and it uses four parameters that are:
+param: job_column_index identifies it is an integer for the specific job 
+param: ocene is the mark of the current state of the specific employee (e.g. X employee mark for english comptence is 5) 
+param: potrebno identifies the required mark by company for the specific comptence (e.g. Required mark for english language is 10)
+param: view that identifies the way of calculating which can be optimistic or pessimistic 
+
+it returns maximal absolute lack between given mark and requirement
+'''
 def maximal_absolute_lack(job_column_index, ocene, potrebno, view):
     maximal_lack = 0
     p = []

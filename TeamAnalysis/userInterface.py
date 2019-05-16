@@ -1,6 +1,13 @@
+#importing everything from analiza file/script
 from analiza import *
+#importing everything from main file/script
 from main import *
+#importing time package to handle time related tasks
 import time
+
+#This user interface is terminal based and has been used only for presentation purposes in the project
+#This user interface more exactly this script is not going to be used directly from the final application itself!
+#In order to understand the steps of using the models run this file from a terminal based. All the instruction are given while using it.
 
 while True:
     current_marks_excel_table = input("\nCurrent marks excel table ('.xlsx' required at end): ")
