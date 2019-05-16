@@ -3,7 +3,6 @@ from analiza import *
 #importing pandas library for data manipulation
 import pandas as pd
 
-
 ''' This method accepts an excel table and it return the needed improvment of a specific comptence using two possible models 1) importance_over_number model and 2) improve_comp_by_formula'''
 def improve_competence(current_marks_excel_table, required_marks_of_competence_excel_table, model, job_column_index, table_of_importance=None, model2=maximal_absolute_lack, number=70, view="optimistic"):
     marks = pd.read_excel(current_marks_excel_table)
