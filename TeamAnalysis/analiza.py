@@ -31,6 +31,14 @@ param: view that identifies the way of calculating which can be optimistic or pe
 it returns maximal absolute lack between given mark and requirement
 '''
 def maximal_absolute_lack(job_column_index, ocene, potrebno, view):
+    """
+    Returns which competencies should be improved first with the maximal absolute lack statistical model.
+
+    :param job_column_index: index referencing job column in data sheet
+    :param ocene: evaluated values
+    :param potrebno: required competences
+    :param view: optimistic or pessimistic
+    """
     maximal_lack = 0
     p = []
     o = []
@@ -85,6 +93,14 @@ def maximal_absolute_lack(job_column_index, ocene, potrebno, view):
 
 
 def maximal_relative_lack(job_column_index, ocene, potrebno, view):
+    """
+        Returns which competencies should be improved first with the maximal relative lack statistical model.
+
+        :param job_column_index: index referencing job column in data sheet
+        :param ocene: evaluated values file
+        :param potrebno: required competences file
+        :param view: optimistic or pessimistic
+        """
     maximal_lack = 1
     p = []
     o = []
@@ -139,6 +155,14 @@ def maximal_relative_lack(job_column_index, ocene, potrebno, view):
 
 
 def most_important_competence_that_lack(job_column_index, ocene, potrebno, view):
+    """
+        Returns which competencies should be improved first with the most_important_competence_that_lack statistical model.
+
+        :param job_column_index: index referencing job column in data sheet
+        :param ocene: evaluated values file
+        :param potrebno: required competences file
+        :param view: optimistic or pessimistic
+        """
     l = []
     p = []
     o = []
@@ -194,6 +218,15 @@ def most_important_competence_that_lack(job_column_index, ocene, potrebno, view)
 
 
 def improve_comp_by_formula(job_column_index, ocene, potrebno, table_of_importance_loc, view):
+    """
+    Returns which competencies should be improved first with the improve competence by formula statistical model.
+
+    :param job_column_index: index referencing job column in data sheet
+    :param ocene: evaluated values file
+    :param potrebno: required competences file
+    :param table_of_importance_loc: table of importance
+    :param view: optimistic or pessimistic
+    """
     formula_lack = 0
     p = []
     o = []
@@ -256,6 +289,18 @@ def improve_comp_by_formula(job_column_index, ocene, potrebno, table_of_importan
 
 
 def importance_over_number(job_column_index, ocene_file, potrebno_file, table_of_importance, view, num=70, model=maximal_absolute_lack):
+    """
+    Returns which competencies should be improved first with the importace over number statistical model.
+
+    :param job_column_index: index referencing job column in data sheet
+    :param ocene: evaluated values file
+    :param potrebno: required competences file
+    :param table_of_importance_loc: table of importance
+    :param view: optimistic or pessimistic
+    :param num: importance number
+    :param model: model that should be used
+    :return:
+    """
     if 0 > num or num > 100:
         print("Number should be between 0 and 100.")
 

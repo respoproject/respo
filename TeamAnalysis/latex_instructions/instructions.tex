@@ -1,0 +1,25 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{amsmath}
+
+\begin{document}
+	\section{Data models}
+	We currently use five models as described below.
+	\begin{enumerate}
+		\item 
+		\textbf{Maximal absolute lack} finds the competence that has the biggest absolute diference.
+		$$\max_{\text{competences}}\{|\text{competence score} - \text{required compentence score}|\}.$$
+		\item 
+		\textbf{Maximal relative lack} finds the competence that has the biggest relative difference.
+		$$\max_{\text{competences}}\left\{\left|\frac{\text{required competence score}}{\text{competence score}}\right|\right\}.$$
+		\item 
+		\textbf{Most important competence that lack} finds the competence that has the biggest required competence score and isn't satisfied.
+		\item 
+		\textbf{Improve competence by formula} finds the competence that should be improved using weights.
+		$$\max_{\text{competences}}\{|\text{required competence score} - \text{competence score}|\cdot\text{competence weight}\}.$$
+		\item 
+		\textbf{Importance over number} finds the competence that should be improved that is bigger then the given number. It determines which competence should be improved using one of previou models.
+	\end{enumerate}
+	The names and algorithms for data models are a subject of change.
+	\section{User interface}
+	The current python code comes with a user interface. It can be used by running the \texttt{userInterface.py} file. 
+\end{document}
